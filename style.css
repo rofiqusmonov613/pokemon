@@ -1,0 +1,163 @@
+@font-face {
+    font-family: 'Orbitron';
+    src: url('/fonts/Orbitron-Regular.woff2') format('woff2'),
+        url('/fonts/Orbitron-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+  @font-face {
+    font-family: 'Digital-7';
+    src: url("/fonts/Digital-7.woff2") format("woff2"), url("/fonts/Digital-7.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+body{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right,red,gold);
+    min-height: 100vh;
+}
+.container{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+img{
+    max-width: 100%;
+    width: 200px;
+    height: 200px;
+}
+img:hover{
+    transition: 2s ease all;
+    transform: scale(1.2);
+    border-radius: 8%;
+}
+.header{
+    font-family: 'Orbitron';
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to right,lime,yellow);
+    padding: 5px 0px;
+    color: red;
+    font-size: 20px;
+}
+.header__title{
+    text-align: center;
+}
+.header__title-orange{
+    padding: 3px;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+.main{
+    flex-grow: 1;
+    margin-top: 100px;
+}
+.films__card-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    justify-content: space-around;
+}
+.films__genre-list{
+    list-style-type: none;
+    margin:15px 0px 15px 0px;
+    padding: 0;
+}
+.films__card{
+    font-family: 'Orbitron';
+    width: 250px;
+    padding: 15px 10px;
+    border-radius: 7px;
+    height: 100%;
+    background: linear-gradient(to right,lime,yellow);
+    box-shadow: 0 3px 44px red, 0 3px 22px gold;
+    transition: .3s ease all;
+    margin-bottom: 30px;
+    color: red;
+    text-align: center;
+    height: 370px;
+    font-size: 16px;
+}
+.films__filter-wrapper{
+    display: flex;
+}
+.films__card:nth-child(4n){
+    margin-right: 0;
+}
+.films__card:hover{
+    box-shadow: 0 10px 30px orange, 0 6px 12px gold;
+}
+.form{
+    margin: 25px 0px 25px 0px;
+    display: flex;
+    flex-direction: column;
+    background-color: gold;
+    padding: 10px 15px;
+    border-radius: 7px;
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3)
+}
+.films__select{
+    margin-right: 25px;
+}
+.input{
+    font-family: 'Orbitron';
+    outline: none;
+    box-sizing: border-box;
+    padding: 10px 7px;
+    margin-top: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right,lime,yellow);
+    text-align: center;
+    color: red;
+    font-size: 24px;
+}
+.input::placeholder{
+    color: red;
+}
+.footer{
+    background: linear-gradient(to right,lime,yellow);
+}
+.footer__copyright{
+    font-family: 'Orbitron';
+    font-size: 32px;
+    text-align: center;
+    color: red;
+}
+.films__btn-header{
+    font-family: 'Orbitron';
+    width: 100%;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(to right,lime,yellow);
+    font-weight: 600;
+    color: red; 
+    font-size: 24px;
+}
+@media screen and (max-width: 600px) {
+    .films__card{
+        margin-left: 50px;
+    }
+    img:hover{
+        transition: 2s ease all;
+        transform: scale(1.1);
+    }
+}
+.films__card-genre{
+    margin-top: -15px;
+}
+.films__card-title{
+    margin-top: -1px;
+}

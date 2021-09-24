@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "icon" type = "image/png" href = "./img/film.png">
+    <title>Films-nikname 1121</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+<link rel="manifest" href="/icon/site.webmanifest">
+<link rel="mask-icon" href="/icon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">I<span class="header__title-orange">Films</span></h1>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="films">
+            <div class="container">
+                <form class="form">
+                    <input class="input films__input-serach" type="text" placeholder="Search film ...">
+                    <div class="films__filter-wrapper">
+                        <select class="input films__select">
+                            <option class="films__option" value="All">All</option>
+                        </select>
+                        <select class="input films__filter">
+                            <option class="films__option" value="a_z">A_Z</option>
+                            <option class="films__option" value="z_a">Z_A</option>
+                            <option class="films__option" value="new__old">New__Old</option>
+                            <option class="films__option" value="old__new">Old__New</option>
+                        </select>
+                    </div>
+                    <button class="films__btn-header">Search</button>
+                </form>
+                <ul class="films__card-wrapper"></ul>
+
+
+                <template id="template">
+                    <li class="films__card">
+                        <img class="films__img" src="https://picsum.photos/300" width="300" height="250"><h2 class="films__card-title">Shazam!</h2>
+                        <p class="films__card-genre">nimadur</p>
+                        <time class="films__release-date" datetime="1.19.1970">1.19.1970</time>
+                    </li>
+                </template>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <h3 class="footer__copyright">&copy 2021</h3>
+        </div>
+    </footer>
+    
+    
+    <script src="./js/pokemons.js"></script>
+    <script src="./js/util.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
