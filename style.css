@@ -17,35 +17,93 @@
 body{
     display: flex;
     flex-direction: column;
-    background: linear-gradient(to right,red,gold);
+    background-color: #FF4848;
     min-height: 100vh;
+}
+.modal-wrapper{
+    background-color: red;
+    position: fixed;
+    display: none;
+    width: 30%;
+    height: 100%;
+    overflow: auto;
+}
+.modal{
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    justify-content: flex-end;
+    align-items: flex-end;
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 100vh;
+    z-index: 3;
+}
+.button{
+    display: flex;
+    max-height: 100vh;
+    justify-content: flex-end;
+    background-color: transparent;
+    width: 130px;
+    height: 108px;
+    border: none;
+    position: absolute;
+    margin-top: 130px;
+    margin-left: -850px;
+    margin-bottom: -30px;
+}
+.h_3{
+    font-family: 'Orbitron';
+    background-color: gold;
+    padding: 0;
+    margin: 0;
+    width: 100px;
+    text-align: center;
+    width: 99%;
+    height: 50px;
+    font-size: 45px;
+    color: red;
+    border: 3px solid blue;
+}
+.btn{
+    font-family: 'Orbitron';
+    position: absolute;
+    width: 60px;
+    height: 55px;
+    border: none;
+    background-color: blue;
+    color: red;
+    font-size: 40px;
+}
+.iconn{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: -100px;
+    margin-top: -78px;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
 }
 .container{
     width: 1200px;
     max-width: 100%;
     margin: 0 auto;
 }
+.header{
+    display: flex;
+    justify-content: center;
+}
+.logo{
+    width: 500px;
+    margin-bottom: -100px;
+    margin-top: 30px;
+}
 img{
     max-width: 100%;
     width: 200px;
     height: 200px;
-}
-img:hover{
-    transition: 2s ease all;
-    transform: scale(1.2);
-    border-radius: 8%;
-}
-.header{
-    font-family: 'Orbitron';
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to right,lime,yellow);
-    padding: 5px 0px;
-    color: red;
-    font-size: 20px;
 }
 .header__title{
     text-align: center;
@@ -77,8 +135,7 @@ img:hover{
     padding: 15px 10px;
     border-radius: 7px;
     height: 100%;
-    background: linear-gradient(to right,lime,yellow);
-    box-shadow: 0 3px 44px red, 0 3px 22px gold;
+    background: gold;
     transition: .3s ease all;
     margin-bottom: 30px;
     color: red;
@@ -99,10 +156,8 @@ img:hover{
     margin: 25px 0px 25px 0px;
     display: flex;
     flex-direction: column;
-    background-color: gold;
     padding: 10px 15px;
     border-radius: 7px;
-    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3)
 }
 .films__select{
     margin-right: 25px;
@@ -116,7 +171,7 @@ img:hover{
     width: 100%;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(to right,lime,yellow);
+    background: gold;
     text-align: center;
     color: red;
     font-size: 24px;
@@ -125,7 +180,7 @@ img:hover{
     color: red;
 }
 .footer{
-    background: linear-gradient(to right,lime,yellow);
+    background: gold;
 }
 .footer__copyright{
     font-family: 'Orbitron';
@@ -141,7 +196,7 @@ img:hover{
     margin-top: 15px;
     cursor: pointer;
     border: none;
-    background: linear-gradient(to right,lime,yellow);
+    background: gold;
     font-weight: 600;
     color: red; 
     font-size: 24px;
@@ -150,14 +205,63 @@ img:hover{
     .films__card{
         margin-left: 50px;
     }
-    img:hover{
-        transition: 2s ease all;
-        transform: scale(1.1);
-    }
 }
 .films__card-genre{
     margin-top: -15px;
 }
 .films__card-title{
-    margin-top: -1px;
+    width: 100%;
+    margin-top: 8px;
+    border-top: 2px solid blue;
+}
+.btn-icon{
+    position: absolute;
+    margin-left: 200px;
+    width: 30px;
+    height: 28px;
+    border: none;
+    background-color: transparent;
+}
+.fa-regular{
+    color: red;
+    width: 30px;
+    height: 30px;
+    margin-left: -14px;
+    z-index: 1;
+}
+.fa-solid{
+    color: red;
+    width: 30px;
+    height: 30px;
+    margin-left: -14px;
+    z-index: 1;
+    margin-top: 360px;
+}
+.pokemons__card{
+    margin-left: 150px;
+    list-style-type: none;
+    font-family: 'Orbitron';
+    width: 250px;
+    padding: 15px 10px;
+    border-radius: 7px;
+    height: 100%;
+    background: gold;
+    transition: .3s ease all;
+    margin-bottom: 30px;
+    color: red;
+    text-align: center;
+    height: 370px;
+    font-size: 16px;
+    margin-top: 30px;
+}
+.pokemons__card:hover{
+    box-shadow: 0 10px 30px orange, 0 6px 12px gold;
+}
+.btn-vedro{
+    position: absolute;
+    margin-left: 200px;
+    width: 30px;
+    height: 28px;
+    border: none;
+    background-color: transparent;
 }

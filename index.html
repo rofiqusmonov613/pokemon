@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "icon" type = "image/png" href = "./img/film.png">
     <title>Pokemons</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
@@ -16,18 +17,46 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    
-    <header class="header">
-        <div class="container">
-            <h1 class="header__title">I<span class="header__title-orange">Films</span></h1>
+      <div class="modal">
+          <div class="modal-wrapper">
+            <button class="btn">x</button>
+            <h3 class="h_3"> Modal</h3>
+            <li class="pokemons__card">
+                <button class="btn-vedro">
+                    <i class="fa-solid fa-trash fa-2xl"></i>
+                </button>
+            <img class="pokemons__img" src="https://picsum.photos/300" width="300" height="250"><h2 class="pokemons__card-title">Shazam!</h2>
+                <p class="pokemons__card-genre">nimadur</p>
+                <p class="pokemons__kg"></p>
+                <time class="pokemons__release-date" datetime="1.19.1970">1.19.1970</time>
+            </li>
+          </div>
         </div>
+    <header class="header"> 
+        <button class="button">
+            <svg width="0" height="0" class="hidden">
+                <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" id="like">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M15.041 12.5C13.241 12.5 11.5535 13.1958 10.291 14.4604C7.67021 17.0854 7.67021 21.3583 10.2931 23.9875L24.9994 38.7187L39.7077 23.9875C42.3306 21.3583 42.3306 17.0854 39.7077 14.4604C37.1827 11.9292 32.7327 11.9333 30.2077 14.4604L26.4744 18.2C25.691 18.9854 24.3077 18.9854 23.5244 18.2L19.791 14.4583C18.5285 13.1958 16.8431 12.5 15.041 12.5ZM24.9994 43.75C24.4473 43.75 23.916 43.5312 23.5264 43.1375L7.34311 26.9292C3.10145 22.6792 3.10145 15.7646 7.34311 11.5146C9.39311 9.46458 12.1264 8.33333 15.041 8.33333C17.9556 8.33333 20.691 9.46458 22.7389 11.5146L24.9994 13.7792L27.2598 11.5167C29.3098 9.46458 32.0431 8.33333 34.9598 8.33333C37.8723 8.33333 40.6077 9.46458 42.6556 11.5146C46.8994 15.7646 46.8994 22.6792 42.6577 26.9292L26.4744 43.1396C26.0827 43.5312 25.5535 43.75 24.9994 43.75Z" fill="gold"></path>
+                  <mask id="mask0" maskUnits="userSpaceOnUse" x="4" y="8" width="42" height="36">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.041 12.5C13.241 12.5 11.5535 13.1958 10.291 14.4604C7.67021 17.0854 7.67021 21.3583 10.2931 23.9875L24.9994 38.7187L39.7077 23.9875C42.3306 21.3583 42.3306 17.0854 39.7077 14.4604C37.1827 11.9292 32.7327 11.9333 30.2077 14.4604L26.4744 18.2C25.691 18.9854 24.3077 18.9854 23.5244 18.2L19.791 14.4583C18.5285 13.1958 16.8431 12.5 15.041 12.5ZM24.9994 43.75C24.4473 43.75 23.916 43.5312 23.5264 43.1375L7.34311 26.9292C3.10145 22.6792 3.10145 15.7646 7.34311 11.5146C9.39311 9.46458 12.1264 8.33333 15.041 8.33333C17.9556 8.33333 20.691 9.46458 22.7389 11.5146L24.9994 13.7792L27.2598 11.5167C29.3098 9.46458 32.0431 8.33333 34.9598 8.33333C37.8723 8.33333 40.6077 9.46458 42.6556 11.5146C46.8994 15.7646 46.8994 22.6792 42.6577 26.9292L26.4744 43.1396C26.0827 43.5312 25.5535 43.75 24.9994 43.75Z" fill="white"></path>
+                  </mask>
+                  <g mask="url(#mask0)">
+                    <rect width="20" height="20" fill="gold"></rect>
+                  </g>
+                </symbol>
+              </svg> 
+              <svg class="iconn">
+                <use xlink:href="#like"></use>
+              </svg>
+        </button>        
+        <img class="logo" src="./img/pokemon_logo 1.svg" alt="logo">
     </header>
 
     <main class="main">
         <section class="films">
             <div class="container">
                 <form class="form">
-                    <input class="input films__input-serach" type="text" autofocus autocomplete="off" placeholder="Search film ...">
+                    <input class="input films__input-serach" placeholder="Search film ...">
                     <div class="films__filter-wrapper">
                         <select class="input films__select">
                             <option class="films__option" value="All">All</option>
@@ -46,8 +75,12 @@
 
                 <template id="template">
                     <li class="films__card">
-                        <img class="films__img" src="https://picsum.photos/300" width="300" height="250"><h2 class="films__card-title">Shazam!</h2>
+                        <button class="btn-icon">
+                            <i class="fa-regular fa-heart fa-2xl"></i>
+                        </button>
+                    <img class="films__img" src="https://picsum.photos/300" width="300" height="250"><h2 class="films__card-title">Shazam!</h2>
                         <p class="films__card-genre">nimadur</p>
+                        <p class="films__kg"></p>
                         <time class="films__release-date" datetime="1.19.1970">1.19.1970</time>
                     </li>
                 </template>
