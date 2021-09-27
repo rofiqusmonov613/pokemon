@@ -200,7 +200,3 @@ elDivWrapperInner.addEventListener('click', function(event) {
       setModal()
     }
   })
-      
-
-
-
