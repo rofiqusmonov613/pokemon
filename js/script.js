@@ -8,16 +8,13 @@ const elBtn = document.querySelector('.btn')
 const elFilter = selectElem('.films__filter', elForm);
 const elTemplate = document.querySelector('#template').content;
 const elDivWrapper = document.querySelector('.modal-wrapper');
+const elDivWrapperInner = document.querySelector('.modal-wrapper-inner');
 const elIcon = document.querySelector('.btn-icon');
-const elNewLi = document.querySelector('.films__card');
-const elLi = document.querySelector('.pokemons__card');
-const elImg = document.querySelector('.pokemons__img');
-const elName = document.querySelector('.pokemons__card-title');
-const elType = document.querySelector('.pokemons__card-genre');
-const elKg = document.querySelector('.pokemons__kg');
-const elAge = document.querySelector('.pokemons__release-date');
-const elNewImg = document.querySelector('.films__img');
-const elNewTitle = document.querySelector('.films__card-title');
+const elFa = document.querySelector('.fa-regular');
+const elSolid = document.querySelector('.fa-solid')
+
+let modalArray = []
+
 
 function renderMovies(pokemonsArr, element){
     element.innerHTML = null;
@@ -30,6 +27,12 @@ function renderMovies(pokemonsArr, element){
         selectElem('.films__card-genre', cloneTemplate).textContent = pokemon.type
         selectElem('.films__kg', cloneTemplate).textContent = pokemon.egg;
         selectElem('.films__release-date', cloneTemplate).textContent = pokemon.avg_spawns;
+
+        cloneTemplate.querySelector('.btn-icon').dataset.itemId = pokemon.id
+        cloneTemplate.querySelector('.fa-regular').dataset.itemId = pokemon.id
+        cloneTemplate.querySelector('.delete_btn').dataset.deleteId = pokemon.id
+        cloneTemplate.querySelector('.fa-solid').dataset.deleteId = pokemon.id
+        
         
         element.appendChild(cloneTemplate);
     })
@@ -140,13 +143,64 @@ elBtn.addEventListener('click', function() {
         elDivWrapper.style.display = 'none';
     }
 })
-elDiv.addEventListener('click', function() {
+// elVedro.addEventListener('click', function() {
+//       elLi.style.display = 'none';
+// })
 
-    if(elDiv) {
-        elDiv.style.display = 'none';
-        elDivWrapper.style.display = 'none';
-    }
-})
-elIcon.addEventListener('click',function() {
+function setModal(){
+
+    elDivWrapperInner.innerHTML = "";
+    modalArray.forEach((item) => {
+        const cloneTemplate = elTemplate.cloneNode(true);
+        
+        selectElem('.films__img', cloneTemplate).src = item.img
+        selectElem('.films__card-title', cloneTemplate).textContent = item.name
+        selectElem('.films__card-genre', cloneTemplate).textContent = item.type
+        selectElem('.films__kg', cloneTemplate).textContent = item.egg;
+        selectElem('.films__release-date', cloneTemplate).textContent = item.avg_spawns;
+
+        cloneTemplate.querySelector('.btn-icon').dataset.itemId = item.id
+        cloneTemplate.querySelector('.fa-regular').dataset.itemId = item.id
+        cloneTemplate.querySelector('.delete_btn').dataset.itemId = item.id
+        cloneTemplate.querySelector('.fa-solid').dataset.itemId = item.id
+        
+        
+        elDivWrapperInner.appendChild(cloneTemplate);
+    })
+}
+
+
+elList.addEventListener('click', function(event) {
+    pokemons.forEach((item) => {
+        if(event.target.dataset.itemId == item.id){
+            modalArray.push(item)
+           
+        }
+    })
     
+    console.log(modalArray)
+    setModal()
+    
+});
+
+function deletePokemon(index){
+    modalArray.splice(index,1)
+}
+
+
+elDivWrapperInner.addEventListener('click', function(event) {
+  if(event.target.matches('.delete_btn')){
+    deletePokemon(Number(event.target.dataset.deleteId))
+    setModal()
+  }
 })
+elDivWrapperInner.addEventListener('click', function(event) {
+    if(event.target.matches('.fa-solid')){
+      deletePokemon(Number(event.target.dataset.deleteId))
+      setModal()
+    }
+  })
+      
+
+
+

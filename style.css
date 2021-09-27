@@ -216,26 +216,20 @@ img{
 }
 .btn-icon{
     position: absolute;
-    margin-left: 200px;
+    margin-left: 180px;
     width: 30px;
     height: 28px;
     border: none;
     background-color: transparent;
 }
-.fa-regular{
+ .fa-regular{
     color: red;
     width: 30px;
     height: 30px;
-    margin-left: -14px;
+    margin-left: -15px;
     z-index: 1;
-}
-.fa-solid{
-    color: red;
-    width: 30px;
-    height: 30px;
-    margin-left: -14px;
-    z-index: 1;
-    margin-top: 360px;
+    margin-top: -5px;
+    position: absolute;
 }
 .pokemons__card{
     margin-left: 150px;
@@ -264,4 +258,22 @@ img{
     height: 28px;
     border: none;
     background-color: transparent;
+}
+li{
+    list-style-type: none;
+}
+.modal-wrapper-inner{
+    padding-top: 50px;
+    padding-left: 130px;
+}
+.delete_btn{
+    position: absolute;
+    height: 38px;
+    border: none;
+    margin-left: 65px;
+    margin-top: -60px;
+    background-color: transparent;
+}
+.fa-solid{
+    color: red;
 }
