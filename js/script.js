@@ -25,7 +25,7 @@ function renderMovies(pokemonsArr, element){
         selectElem('.films__img', cloneTemplate).src = pokemon.img
         selectElem('.films__card-title', cloneTemplate).textContent = pokemon.name
         selectElem('.films__card-genre', cloneTemplate).textContent = pokemon.type
-        selectElem('.films__kg', cloneTemplate).textContent = pokemon.egg;
+        selectElem('.films__kg', cloneTemplate).textContent = pokemon.weight;
         selectElem('.films__release-date', cloneTemplate).textContent = pokemon.avg_spawns;
 
         cloneTemplate.querySelector('.btn-icon').dataset.itemId = pokemon.id
